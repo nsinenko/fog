@@ -186,7 +186,6 @@ module Fog
             end
             @unf_loaded_or_warned = true
           end
-          string = defined?(::UNF::Normalizer) ? ::UNF::Normalizer.normalize(string, :nfc) : string
           string.gsub(/([^a-zA-Z0-9_.\-~\/]+)/) {
             "%" + $1.unpack("H2" * $1.bytesize).join("%").upcase
           }
